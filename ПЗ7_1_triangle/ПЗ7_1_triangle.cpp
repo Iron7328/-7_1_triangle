@@ -36,7 +36,6 @@ public:
 
 	void DoesExist()
 	{
-		//std::cout << "DEBUG: A=" << A << " B=" << B << " C=" << C << "\n";
 		std::string tmp;
 		if (a < 0 || b < 0 || c < 0 || ((a + b) <= c) || ((b + c) <= a) || ((a + c) <= b))
 		{
@@ -59,10 +58,11 @@ public:
 				}
 				else
 				{
-					this->A = radToDeg(acos((pow(b, 2) + pow(c, 2) - pow(a, 2)) / (2 * b * c)));
-					this->B = radToDeg(acos((pow(a, 2) + pow(c, 2) - pow(b, 2)) / (2 * a * c)));
-					this->C = radToDeg(acos((pow(a, 2) + pow(b, 2) - pow(c, 2)) / (2 * a * b)));
-					this->isValid = true;
+				this->A = radToDeg(acos((pow(b, 2) + pow(c, 2) - pow(a, 2)) / (2 * b * c)));
+				this->B = radToDeg(acos((pow(a, 2) + pow(c, 2) - pow(b, 2)) / (2 * a * c)));
+				this->C = radToDeg(acos((pow(a, 2) + pow(b, 2) - pow(c, 2)) / (2 * a * b)));
+				std::cout << "right angles: a = " << A << "; b = " << B << "; c = " << C << ";\n";
+				this->isValid = true;
 				}
 				std::cout << "right angles: a = " << A << "; b = " << B << "; c = " << C << ";\n";
 			}
@@ -74,6 +74,9 @@ public:
 		else
 		{
 			this->isValid = true;
+			/*this->A = A_valid;
+			this->B = B_valid;
+			this->C = C_valid;*/
 		}
 	}
 
