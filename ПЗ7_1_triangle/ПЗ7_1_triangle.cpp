@@ -73,6 +73,12 @@ public:
 		else
 		{
 			this->isValid = true;
+<<<<<<<<< Temporary merge branch 1
+			/*this->A = A_valid;
+			this->B = B_valid;
+			this->C = C_valid;*/
+=========
+>>>>>>>>> Temporary merge branch 2
 		}
 	}
 
