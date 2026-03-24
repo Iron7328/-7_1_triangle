@@ -14,7 +14,6 @@ class Triangle
 private:
 	double a, b, c; // стороны
 	double A, B, C; // углы
-	//double A_valid, B_valid, C_valid; // углы исправленные
 	bool isValid;
 	double perimeter;
 	double semiperimeter;
@@ -22,7 +21,7 @@ private:
 	double h_a, h_b, h_c;
 
 public:
-	Triangle() : a(0), b(0), c(0), A(0), B(0), C(0), /*A_valid(0), B_valid(0), C_valid(0),*/ isValid(false), perimeter(0), semiperimeter(0), area(0), h_a(0), h_b(0), h_c(0) {}
+	Triangle() : a(0), b(0), c(0), A(0), B(0), C(0), isValid(false), perimeter(0), semiperimeter(0), area(0), h_a(0), h_b(0), h_c(0) {}
 
 	Triangle(double a, double b, double c, double A, double B, double C)
 	{
@@ -36,7 +35,6 @@ public:
 
 	void DoesExist()
 	{
-		//std::cout << "DEBUG: A=" << A << " B=" << B << " C=" << C << "\n";
 		std::string tmp;
 		if (a < 0 || b < 0 || c < 0 || ((a + b) <= c) || ((b + c) <= a) || ((a + c) <= b))
 		{
@@ -62,6 +60,7 @@ public:
 					this->A = radToDeg(acos((pow(b, 2) + pow(c, 2) - pow(a, 2)) / (2 * b * c)));
 					this->B = radToDeg(acos((pow(a, 2) + pow(c, 2) - pow(b, 2)) / (2 * a * c)));
 					this->C = radToDeg(acos((pow(a, 2) + pow(b, 2) - pow(c, 2)) / (2 * a * b)));
+					std::cout << "right angles: a = " << A << "; b = " << B << "; c = " << C << ";\n";
 					this->isValid = true;
 				}
 				std::cout << "right angles: a = " << A << "; b = " << B << "; c = " << C << ";\n";
